@@ -34,3 +34,10 @@ jobs:
     - name: Test with pytest
       run: |
         pytest
+ - usos : akhileshns/heroku-deploy@v3.12.12
+      con :
+        heroku_api_key : $ {{secretos.HEROKU_SECRET}}
+        heroku_app_name : "uide"  
+        heroku_email :   $ {{secretos.HEROKU_EMAIL}}
+        buildpack : ' heroku / python '
+        usedocker : falso
